@@ -6,7 +6,7 @@ struct wielomian *init_wielomian(uint8_t stopien)
     pom->stopien = stopien;
     pom->wsp = malloc(sizeof(double) * (stopien + 1));
     for (uint8_t x = 0; x <= stopien; x++)
-        pom->wsp[x] = 0;
+        pom->wsp[x] = 0.0;
     return pom;
 }
 
@@ -61,7 +61,7 @@ struct wielomian *add_wielomian(struct wielomian *a, struct wielomian *b)
         wiekszy_st = a->stopien;
         out = init_wielomian(wiekszy_st);
         for (int x = mniejszy_st + 1; x <= wiekszy_st; x++)
-            out->wsp[x] = -a->wsp[x];
+            out->wsp[x] = a->wsp[x]; //czemu dodajemy '-' wspolczynnik?
     }
     else
     {
@@ -69,10 +69,10 @@ struct wielomian *add_wielomian(struct wielomian *a, struct wielomian *b)
         wiekszy_st = b->stopien;
         out = init_wielomian(wiekszy_st);
         for (int x = mniejszy_st + 1; x <= wiekszy_st; x++)
-            out->wsp[x] = -b->wsp[x];
+            out->wsp[x] = b->wsp[x];
     }
     for (int x = 0; x <= mniejszy_st; x++)
-        out->wsp[x] -= a->wsp[x] + b->wsp[x];
+        out->wsp[x] = a->wsp[x] + b->wsp[x];
     return out;
 }
 
@@ -126,9 +126,13 @@ struct wielomian *wielomian_czebyszewa(uint8_t stopien)
 
 struct wielomian *pochodna_wielomianu(struct wielomian *a)
 {
-    struct wielomian *out = init_wielomian(a->stopien);
-    for (int x = 0; x <= a->stopien; x++)
+    struct wielomian *out = init_wielomian(a->stopien - 1);
+    for (int x = a->stopien; x >= 1; x--) //moja wersja
+        out->wsp[x-1] = a->wsp[x] * (x);
+    
+    /*for (int x = 0; x <= a->stopien; x++)
         out->wsp[x] = a->wsp[x + 1] * (x + 1);
+    */
     return out;
 }
 
