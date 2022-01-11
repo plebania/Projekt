@@ -1,10 +1,10 @@
 #include "makespl.h"
-#include "piv_ge_solver.h"
+#include "./gaus/piv_ge_solver.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <float.h>
-#include "wielomiany.h"
+#include "./wielomiany.h"
 
 /* UWAGA: liczbę używanych f. bazowych można ustawić przez wartość
           zmiennej środowiskowej APPROX_BASE_SIZE

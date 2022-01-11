@@ -13,6 +13,12 @@ aproksymator_na_bazie.o: makespl.h points.h gaus/piv_ge_solver.h
 interpolator.o: makespl.h points.h gaus/piv_ge_solver.h
 	$(CC) -I gaus -c interpolator.c
 
+baza_wielomianow_czebyszewa.o: makespl.h points.h gaus/piv_ge_solver.h
+	$(CC) -I gaus -c baza_wielomianow_czebyszewa.c
+
+czebyszewik: main.o splines.o points.o baza_wielomianow_czebyszewa.o wielomiany.o gaus/libge.a
+	$(CC) -o czebyszewik main.o splines.o points.o baza_wielomianow_czebyszewa.o wielomiany.o -L gaus -l ge -lm
+
 .PHONY: clean
 
 clean:
