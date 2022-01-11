@@ -2,5 +2,5 @@
 cd gaus
 make -B
 cd ..
-make -B clean
+make -B
 ./aprox
