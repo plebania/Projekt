@@ -126,13 +126,13 @@ struct wielomian *wielomian_czebyszewa(uint8_t stopien)
 
 struct wielomian *pochodna_wielomianu(struct wielomian *a)
 {
-    struct wielomian *out = init_wielomian(a->stopien - 1);
+    struct wielomian *out = init_wielomian(a->stopien);
     for (int x = a->stopien; x >= 1; x--) //moja wersja
         out->wsp[x-1] = a->wsp[x] * (x);
     
-    /*for (int x = 0; x <= a->stopien; x++)
-        out->wsp[x] = a->wsp[x + 1] * (x + 1);
-    */
+    //for (int x = 0; x <= a->stopien; x++)
+        //out->wsp[x] = a->wsp[x + 1] * (x + 1);
+    
     return out;
 }
 
