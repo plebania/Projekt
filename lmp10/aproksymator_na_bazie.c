@@ -1,6 +1,6 @@
 #include "makespl.h"
 #include "piv_ge_solver.h"
-
+#include "baza.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <float.h>

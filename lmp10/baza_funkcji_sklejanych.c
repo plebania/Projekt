@@ -1,4 +1,4 @@
-
+#include "baza.h"
 #include <stdio.h>
 
 double fi(double a, double b, int n, int i, double x)
