@@ -113,7 +113,7 @@ struct wielomian *wielomian_czebyszewa(uint8_t stopien)
         return Tpp;
     struct wielomian *kontener, *wiel_2x = init_wielomian(1);
     wiel_2x->wsp[1] = 2;
-    for (uint8_t x = 0; x < stopien - 2; x++)
+    for (uint8_t x = 0; x < stopien - 1; x++)
     {
         kontener = sub_wielomian(mul_wielomian(Tpp, wiel_2x), T);
         free(T->wsp);
