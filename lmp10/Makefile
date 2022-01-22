@@ -2,7 +2,7 @@ sklejane: main.o splines.o points.o baza_funkcji_sklejanych.o aproksymator_na_ba
 	$(CC) -Wall -Wextra -pedantic -o sklejane  main.o splines.o points.o baza_funkcji_sklejanych.o aproksymator_na_bazie.o -L gaus -l ge -lm
 
 czebyszew: main.o splines.o points.o baza_wielomianow_czebyszewa.o aproksymator_na_bazie.o wielomiany.o gaus/libge.a
-	$(CC) -Wall -Wextra -pedantic -o czebyszew main.o splines.o points.o baza_wielomianow_czebyszewa.o aproksymator_na_bazie.o wielomiany.o -L gaus -l ge -lm
+	$(CC) -g -Wall -Wextra -pedantic -o czebyszew main.o splines.o points.o baza_wielomianow_czebyszewa.o aproksymator_na_bazie.o wielomiany.o -L gaus -l ge -lm
 
 
 
