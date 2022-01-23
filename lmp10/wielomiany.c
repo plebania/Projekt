@@ -10,6 +10,12 @@ struct wielomian *init_wielomian(uint8_t stopien)
     return pom;
 }
 
+void free_wielomian(struct wielomian *ptr)
+{
+    if (ptr->wsp != NULL)
+        free(ptr->wsp);
+}
+
 double val_wielomian(struct wielomian *a, double x)
 {
     double out = 0;
@@ -128,11 +134,11 @@ struct wielomian *pochodna_wielomianu(struct wielomian *a)
 {
     struct wielomian *out = init_wielomian(a->stopien);
     for (int x = a->stopien; x >= 1; x--) //moja wersja
-        out->wsp[x-1] = a->wsp[x] * (x);
-    
+        out->wsp[x - 1] = a->wsp[x] * (x);
+
     //for (int x = 0; x <= a->stopien; x++)
-        //out->wsp[x] = a->wsp[x + 1] * (x + 1);
-    
+    //out->wsp[x] = a->wsp[x + 1] * (x + 1);
+
     return out;
 }
 

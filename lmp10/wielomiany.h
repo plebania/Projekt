@@ -11,6 +11,7 @@ struct wielomian
 };
 
 struct wielomian *init_wielomian(uint8_t stopien);
+void free_wielomian(struct wielomian *ptr);
 double val_wielomian(struct wielomian *a, double x);
 void wypisz_wielomian(struct wielomian *a);
 

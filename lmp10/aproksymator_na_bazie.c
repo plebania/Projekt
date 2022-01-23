@@ -121,4 +121,7 @@ void make_spl(points_t *pts, spline_t *spl)
 		fclose(tst);
 	}
 #endif
+	free_matrix(eqs);
+	free_points(pts);
+	free_splines(spl);
 }

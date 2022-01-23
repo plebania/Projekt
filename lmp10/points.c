@@ -49,3 +49,14 @@ int read_pts_failed(FILE *inf, points_t *pts)
 
   return 0;
 }
+
+void free_points(points_t *pts)
+{
+  if (pts != NULL)
+  {
+    if (pts->x != NULL)
+      free(pts->x);
+    if (pts->y != NULL)
+      free(pts->y);
+  }
+}
