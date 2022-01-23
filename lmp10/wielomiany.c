@@ -133,6 +133,8 @@ struct wielomian *wielomian_czebyszewa(uint8_t stopien)
     }
     free(T->wsp);
     free(T);
+    free(wiel_2x->wsp);
+    free(wiel_2x);
     return Tpp;
 }
 
