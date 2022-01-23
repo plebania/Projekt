@@ -180,5 +180,6 @@ int main(int argc, char **argv)
     fclose(gpf);
   }
   free_splines(&spl);
+  free_points(&pts);
   return 0;
 }
