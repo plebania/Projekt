@@ -116,7 +116,11 @@ struct wielomian *wielomian_czebyszewa(uint8_t stopien)
     struct wielomian *Tpp = init_wielomian(1); //wielomian czebyszewa o stopniu 1 wyzszym;
     Tpp->wsp[1] = 1;
     if (stopien == 1)
+    {
+        free(T->wsp);
+        free(T);
         return Tpp;
+    }
     struct wielomian *kontener, *wiel_2x = init_wielomian(1);
     wiel_2x->wsp[1] = 2;
     for (uint8_t x = 0; x < stopien - 1; x++)
@@ -127,6 +131,8 @@ struct wielomian *wielomian_czebyszewa(uint8_t stopien)
         T = Tpp;
         Tpp = kontener;
     }
+    free(T->wsp);
+    free(T);
     return Tpp;
 }
 
