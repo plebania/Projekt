@@ -4,6 +4,8 @@ sklejane: main.o splines.o points.o baza_funkcji_sklejanych.o aproksymator_na_ba
 czebyszew: main.o splines.o points.o baza_wielomianow_czebyszewa.o aproksymator_na_bazie.o wielomiany.o gaus/libge.a
 	$(CC) -g -Wall -Wextra -pedantic -o czebyszew main.o splines.o points.o baza_wielomianow_czebyszewa.o aproksymator_na_bazie.o wielomiany.o -L gaus -l ge -lm
 
+trygonometryczne: main.o splines.o points.o baza_funkcji_trygonometrycznych.o aproksymator_na_bazie.o gaus/libge.a
+	$(CC) -g -Wall -Wextra -pedantic -o trygonometryczne main.o splines.o points.o baza_funkcji_trygonometrycznych.o aproksymator_na_bazie.o -L gaus -l ge -lm
 
 
 intrp: main.o splines.o points.o interpolator.o gaus/libge.a
