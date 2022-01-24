@@ -63,7 +63,6 @@ void make_spl(points_t *pts, spline_t *spl)
 		for (k = 0; k < pts->n; k++)
 			add_to_entry_matrix(eqs, j, nb, y[k] * fi(a, b, nb, j, x[k]));
 	}
-	write_matrix(eqs, stdout);
 #ifdef DEBUG
 	write_matrix(eqs, stdout);
 #endif
